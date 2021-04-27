@@ -4,7 +4,7 @@ If you're reading this, you're likely a candidate for a frontend job at Teachabl
 
 The application, once completed, should meet the following criteria:
 
-1. It have a search box that lets users search for Ruby Gems.
+1. It should have a search box that lets users search for Ruby Gems.
 2. It should display the results of the search in a list.
 3. Each Gem should have a button that lets users "save" and "unsave" Gems.
 4. It should have a way to view saved Gems, even after the browser window is refreshed (localStorage is a fine for this).
