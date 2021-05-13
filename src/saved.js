@@ -7,11 +7,11 @@ export function renderSavedGems() {
     container.removeChild(container.lastChild);
     container.firstChild.innerText = "Saved Gems:";
   } else {
-    renderHeader("Saved Gems:")
-  }
+    renderHeader("Saved Gems:");
+  };
 
   const savedGemsContainer = document.createElement("div");
-  savedGemsContainer.setAttribute("id", "results-container");
+  savedGemsContainer.setAttribute("id", "saved-gems-container");
   container.appendChild(savedGemsContainer);
 
   for (let i = 0; i < localStorage.length; i++) {
@@ -21,13 +21,13 @@ export function renderSavedGems() {
       let savedGem = JSON.parse(localStorage.getItem(key));
       let resultDiv = renderGem(savedGem);
       savedGemsContainer.append(resultDiv);
-    }
-  }
+    };
+  };
 
   if(!savedGemsContainer.hasChildNodes()) {
     const saveGemsMessage = document.createElement("p");
     saveGemsMessage.innerText = "You have no saved gems. Search for gems and start saving your favorites";
 
     savedGemsContainer.append(saveGemsMessage);
-  }
-}
+  };
+};

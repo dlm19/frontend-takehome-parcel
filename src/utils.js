@@ -1,26 +1,26 @@
 export function renderGem(result) {
-  const {name, version, info, downloads} = result;
+  const { name, version, info, downloads } = result;
 
   const div = document.createElement("div");
   div.setAttribute("class", "result");
 
   const nameElement = document.createElement("h4");
-  nameElement.setAttribute("class", "entry name")
+  nameElement.setAttribute("class", "entry-name");
   nameElement.innerText = name;
   div.appendChild(nameElement);
 
   const versionElement = document.createElement("p");
-  versionElement.setAttribute("class", "entry version");
+  versionElement.setAttribute("class", "entry-version");
   versionElement.innerText = version;
   div.appendChild(versionElement);
 
   const infoElement = document.createElement("p");
-  infoElement.setAttribute("class", "entry info");
+  infoElement.setAttribute("class", "entry-info");
   infoElement.innerText = info;
   div.appendChild(infoElement);
 
   const downloadElement = document.createElement("p");
-  downloadElement.setAttribute("class", "entry downloads");
+  downloadElement.setAttribute("class", "entry-downloads");
   downloadElement.innerText = downloads;
   div.appendChild(downloadElement);
 
@@ -28,7 +28,7 @@ export function renderGem(result) {
   div.append(saveButton);
 
   return div;
-}
+};
 
 function createSaveButton(result) {
   const name = result.name;
@@ -42,7 +42,7 @@ function createSaveButton(result) {
     button.innerText = "unsave";
   } else {
     button.innerText = "save";
-  }
+  };
 
   button.onclick = () => {
     const parent = button.parentNode;
@@ -56,11 +56,17 @@ function createSaveButton(result) {
     } else {
       localStorage.setItem(storageKey, JSON.stringify(result));
       button.innerText = "unsave";
-    }
-  }
+    };
+
+    const maybeInSavedGems = document.getElementById("saved-gems-container");
+
+    if(maybeInSavedGems) {
+      document.getElementById("saved-gems").click();
+    };
+  };
 
   return button;
-}
+};
 
 export function renderHeader(header) {
   const container = document.getElementById("container");
@@ -71,11 +77,3 @@ export function renderHeader(header) {
   container.append(listHeader);
 }
 
-
-/*
-TODO:
-- Make elements more accessible to screen readers
-- Add styling to elements
-- Rewrite everything in React 😭
-- Make code more modularized and reusable
-*/
