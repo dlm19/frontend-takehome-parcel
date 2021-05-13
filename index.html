@@ -4,7 +4,16 @@
   <title>Ruby Gems search app</title>
   <link rel="stylesheet" href="./src/base.css" />
 </head>
-<body>
-  <h1 class="big-lorem-ipsum">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor...</h1>
+<body id="body">
+  <div id="header">
+    <div id="search-container">
+      <label for="gems">Search Gems:</label>
+      <input type="text" id="gems" name="gems" required size="45">
+      <button id="gem-search">Go</button>
+    </div>
+    <button id="saved-gems">Saved Gems</button>
+  </div>
+  <div id="container"></div>
 </body>
+<script src="src/app.js"></script>
 </html>
